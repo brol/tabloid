@@ -1,0 +1,71 @@
+{{tpl:extends parent="__layout.html"}}
+
+<tpl:Block name="head-title">
+	<title>{{tpl:lang Tags}} - {{tpl:BlogName encode_html="1"}}</title>
+</tpl:Block>
+
+<tpl:Block name="meta-robots">
+	<meta name="ROBOTS" content="{{tpl:BlogMetaRobots robots="NOINDEX"}}" />
+</tpl:Block>
+
+<tpl:Block name="head-linkrel">
+	<link rel="contents" href="{{tpl:BlogArchiveURL}}" title="{{tpl:lang Archives}}" />
+	<link rel="meta" type="application/xbel+xml" title="Blogroll" href="{{tpl:BlogrollXbelLink}}" />
+</tpl:Block>
+
+<tpl:Block name="body-tag"><body class="dc-tags"></tpl:Block>
+
+<tpl:Block name="main-content">
+  <div id="content-info">
+    <tpl:Tags>
+     <tpl:TagsHeader>
+     <form method="get" action="" id="tags">
+       <fieldset>
+         <label for="tags">{{tpl:lang Sort}} {{tpl:lang by}}</label>
+         <select name="tags" onchange="location = this.options[this.selectedIndex].value;">
+		   <option value="" selected="selected">{{tpl:lang Tag}}</option>
+         </tpl:TagsHeader>
+           <option value="{{tpl:TagURL}}">
+             {{tpl:TagID lower_case="1"}}
+           </option>
+         <tpl:TagsFooter>
+         </select>
+       </fieldset>
+     </form>
+     </tpl:TagsFooter>
+    </tpl:Tags>
+    <h2>{{tpl:lang Tags}}</h2>
+  </div>
+
+  <div id="content-more">
+    <tpl:Tags>
+      <tpl:TagsHeader>
+      </tpl:TagsHeader>
+      <table><caption><a href="{{tpl:TagURL}}">{{tpl:TagID}}</a>
+      <span><a type="application/atom+xml" href="{{tpl:TagFeedURL type="atom"}}" title="{{tpl:lang This tag's entries Atom feed}}" class="feed">{{tpl:lang Entries feed}}</a>
+        <tpl:SysIf operator="or" comments_active="1" pings_active="1">
+        - <a type="application/atom+xml" href="{{tpl:TagFeedURL type="atom"}}/comments"
+        title="{{tpl:lang This tag's comments Atom feed}}" class="feed">{{tpl:lang Comments feed}}</a>
+        </tpl:SysIf>
+      </span>
+      </caption>
+      <tr>
+		<th>{{tpl:lang Title}}</th>
+		<th>Date</th>
+		<th>{{tpl:lang Author}}</th>
+		<th>{{tpl:lang Attachments}}</th>
+	  </tr>
+      <tpl:Entries no_content="1" lastn="0">
+          <tr class="{{tpl:EntryIfOdd}}">
+            <td class="th-entry"><a href="{{tpl:EntryURL}}">{{tpl:EntryTitle encode_html="1"}}</a></td>
+            <td class="th-date">{{tpl:EntryDate format="%d %b %Y"}} {{tpl:EntryTime}}</td>
+            <td class="th-author">{{tpl:EntryAuthorCommonName}}</td>
+            <td class="th-attachment">{{tpl:EntryAttachmentCount none="0" one="%s" more="%s"}}</td>
+          </tr>
+      </tpl:Entries>
+      </table>
+      <tpl:TagsFooter>
+      </tpl:TagsFooter>
+    </tpl:Tags>
+  </div>
+</tpl:Block>

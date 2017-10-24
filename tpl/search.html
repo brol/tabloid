@@ -1,0 +1,126 @@
+{{tpl:extends parent="__layout.html"}}
+
+<tpl:Block name="head-title">
+	<title>{{tpl:lang Search}} - {{tpl:SysSearchString encode_html="1"}} - {{tpl:BlogName encode_html="1"}}<tpl:PaginationIf start="0"> - {{tpl:lang page}} {{tpl:PaginationCurrent}}</tpl:PaginationIf></title>
+</tpl:Block>
+
+<tpl:Block name="meta-robots">
+	<meta name="ROBOTS" content="{{tpl:BlogMetaRobots robots="NOINDEX,NOARCHIVE"}}" />
+</tpl:Block>
+
+<tpl:Block name="head-linkrel">
+	<link rel="contents" href="{{tpl:BlogArchiveURL}}" title="{{tpl:lang Archives}}" />
+
+	<tpl:Entries no_content="1">
+		<tpl:EntriesHeader>
+			<tpl:Pagination>
+				<tpl:PaginationIf end="0">
+					<link rel="prev" title="{{tpl:lang previous entries}}" href="{{tpl:PaginationURL offset="1"}}" />
+				</tpl:PaginationIf>
+
+				<tpl:PaginationIf start="0">
+					<link rel="next" title="{{tpl:lang next entries}}" href="{{tpl:PaginationURL offset="-1"}}" />
+				</tpl:PaginationIf>
+			</tpl:Pagination>
+		</tpl:EntriesHeader>
+
+		<link rel="chapter" href="{{tpl:EntryURL}}" title="{{tpl:EntryTitle encode_html="1"}}" />
+	</tpl:Entries>
+
+	<link rel="meta" type="application/xbel+xml" title="Blogroll" href="{{tpl:BlogrollXbelLink}}" />
+</tpl:Block>
+
+<tpl:Block name="body-tag"><body class="dc-search"></tpl:Block>
+
+<tpl:Block name="main-content">
+  <div id="content-info">
+    <h2>{{tpl:lang Search}}</h2>
+    <tpl:SysIf search_count="==0">
+      <p>{{tpl:SysSearchString encode_html="1" string="Your search for <em>%1$s</em> returned no result."}}</p>
+    </tpl:SysIf>
+    <tpl:SysIf search_count="==1">
+      <p>{{tpl:SysSearchString encode_html="1" string="Your search for <em>%1$s</em> returned <strong>%2$s</strong> result."}}</p>
+    </tpl:SysIf>
+    <tpl:SysIf search_count="&gt;1">
+      <p>{{tpl:SysSearchString encode_html="1" string="Your search for <em>%1$s</em> returned <strong>%2$s</strong> results."}}</p>
+    </tpl:SysIf>
+  </div>
+
+  <tpl:Entries>
+    <tpl:EntriesHeader><div class="post"></tpl:EntriesHeader>
+    <tpl:EntryIf first="1">
+    <div id="p{{tpl:EntryID}}" lang="{{tpl:EntryLang}}" role="article">
+
+      {{tpl:EntryFirstImage size="s" class="featured left" with_category="1"}}
+
+      <div class="featured-post">
+        <h2 class="post-title"><a href="{{tpl:EntryURL}}">{{tpl:EntryTitle encode_html="1"}}</a></h2>
+
+        <p class="post-info">{{tpl:EntryDate format="%A %d %B %Y"}}, {{tpl:EntryTime}}
+        <tpl:EntryIf show_comments="1" has_comment="1">
+          <a href="{{tpl:EntryURL}}#comment" class="comment_count">{{tpl:EntryCommentCount none="0" one="%s" more="%s"}}</a>
+        </tpl:EntryIf>
+        </p>
+
+        <!-- # --BEHAVIOR-- publicEntryBeforeContent -->
+        {{tpl:SysBehavior behavior="publicEntryBeforeContent"}}
+
+        <!-- # Entry -->
+        <div class="post-content">{{tpl:EntryContent full="1" remove_html="1" encode_html="1" cut_string="200"}}<span class="readmore-ellipsis">...</span></div>
+        <p class="read-it"><a href="{{tpl:EntryURL}}" title="{{tpl:lang Continue reading}} {{tpl:EntryTitle encode_html="1"}}">{{tpl:lang Continue reading}}</a></p>
+
+        <!-- # --BEHAVIOR-- publicEntryAfterContent -->
+        {{tpl:SysBehavior behavior="publicEntryAfterContent"}}
+      </div>
+
+      <hr />
+    </div>
+    </tpl:EntryIf>
+
+    <tpl:EntryIf first="0">
+    <div id="p{{tpl:EntryID}}" lang="{{tpl:EntryLang}}" role="article">
+
+        {{tpl:EntryFirstImage size="t" class="thumbnail right" with_category="1"}}
+
+        <div style="overflow: hidden;">
+        <h2 class="post-title"><a href="{{tpl:EntryURL}}">{{tpl:EntryTitle encode_html="1"}}</a></h2>
+
+        <p class="post-info">{{tpl:EntryDate format="%A %d %B %Y"}}, {{tpl:EntryTime}}
+        <tpl:EntryIf show_comments="1" has_comment="1">
+          <a href="{{tpl:EntryURL}}#comment" class="comment_count">{{tpl:EntryCommentCount none="0" one="%s" more="%s"}}</a>
+        </tpl:EntryIf>
+        </p>
+
+        <!-- # --BEHAVIOR-- publicEntryBeforeContent -->
+        {{tpl:SysBehavior behavior="publicEntryBeforeContent"}}
+
+        <!-- # Entry -->
+        <div class="post-content">{{tpl:EntryContent full="1" remove_html="1" encode_html="1" cut_string="200"}}<span class="readmore-ellipsis">...</span></div>
+        <p class="read-it"><a href="{{tpl:EntryURL}}" title="{{tpl:lang Continue reading}} {{tpl:EntryTitle encode_html="1"}}">{{tpl:lang Continue reading}}</a></p>
+
+        <!-- # --BEHAVIOR-- publicEntryAfterContent -->
+        {{tpl:SysBehavior behavior="publicEntryAfterContent"}}
+        </div>
+
+        <div class="hr-style1"><hr /></div>
+    </div>
+    </tpl:EntryIf>
+
+    <tpl:EntriesFooter>
+		  <tpl:Pagination>
+			<div class="pagination">
+				<tpl:PaginationIf start="0">
+				<a href="{{tpl:PaginationURL offset="-1"}}" class="prev left">&#171; {{tpl:lang previous entries}}</a></tpl:PaginationIf>
+				<tpl:PaginationIf start="1">
+				<span class="prev left">&#171; {{tpl:lang previous entries}}</span></tpl:PaginationIf>
+
+				<tpl:PaginationIf end="0"><a href="{{tpl:PaginationURL offset="+1"}}" class="next right">{{tpl:lang next entries}} &#187;</a></tpl:PaginationIf>
+				<tpl:PaginationIf end="1"><span class="next right">{{tpl:lang next entries}} &#187;</span></tpl:PaginationIf>
+
+				{{tpl:PaginationLinks max="10"}}
+			</div>
+		  </tpl:Pagination>
+      </div>
+    </tpl:EntriesFooter>
+  </tpl:Entries>
+</tpl:Block>

@@ -1,0 +1,88 @@
+{{tpl:extends parent="__layout.html"}}
+
+<tpl:Block name="head-title">
+	<title>{{tpl:lang Archives}} - {{tpl:ArchiveDate}} - {{tpl:BlogName encode_html="1"}}</title>
+</tpl:Block>
+
+<tpl:Block name="meta-robots">
+	<meta name="ROBOTS" content="{{tpl:BlogMetaRobots robots="NOINDEX"}}" />
+</tpl:Block>
+
+<tpl:Block name="head-linkrel">
+	<link rel="contents" href="{{tpl:BlogArchiveURL}}" title="{{tpl:lang Archives}}" />
+
+	<tpl:ArchiveNext><link rel="next" href="{{tpl:ArchiveURL}}"
+	title="{{tpl:ArchiveDate encode_html="1"}}" /></tpl:ArchiveNext>
+	<tpl:ArchivePrevious><link rel="prev" href="{{tpl:ArchiveURL}}"
+	title="{{tpl:ArchiveDate encode_html="1"}}" /></tpl:ArchivePrevious>
+
+	<tpl:Entries no_content="1">
+		<link rel="chapter" href="{{tpl:EntryURL}}" title="{{tpl:EntryTitle encode_html="1"}}" />
+	</tpl:Entries>
+</tpl:Block>
+
+<tpl:Block name="body-tag"><body class="dc-archive-month"></tpl:Block>
+
+<tpl:Block name="main-content">
+  <div id="content-info">
+    <tpl:Archives>
+     <tpl:ArchivesHeader>
+     <form method="get" action="" id="archives">
+       <fieldset>
+         <label for="archives">{{tpl:lang Sort}} {{tpl:lang by}}</label>
+         <select name="archives" onchange="location = this.options[this.selectedIndex].value;">
+		   <option value="">{{tpl:lang Date}}</option>
+         </tpl:ArchivesHeader>
+         <tpl:ArchivesYearHeader>
+           <optgroup label="{{tpl:ArchiveDate format="%Y"}}">
+         </tpl:ArchivesYearHeader>
+           <option value="{{tpl:ArchiveURL}}">
+             {{tpl:ArchiveDate encode_html="1" format="%B" lower_case="1"}} ({{tpl:ArchiveEntriesCount}})
+           </option>
+         <tpl:ArchivesYearFooter>
+           </optgroup>
+         </tpl:ArchivesYearFooter>
+         <tpl:ArchivesFooter>
+         </select>
+       </fieldset>
+     </form>
+     </tpl:ArchivesFooter>
+    </tpl:Archives>
+    <h2>{{tpl:lang Archives}} {{tpl:ArchiveDate}}</h2>
+    <span class="arch-nav left">
+    <tpl:ArchivePrevious><a href="{{tpl:ArchiveURL}}" class="prev">&#171; {{tpl:ArchiveDate encode_html="1"}}</a></tpl:ArchivePrevious>
+     - <a href="{{tpl:BlogArchiveURL}}">{{tpl:lang Archives}}</a>
+    <tpl:ArchiveNext> - <a href="{{tpl:ArchiveURL}}" class="next">{{tpl:ArchiveDate encode_html="1"}} &#187;</a></tpl:ArchiveNext>
+    </span>
+  </div>
+
+  <div id="content-more">
+	  <tpl:Entries no_content="1" lastn="0">
+		<tpl:EntriesHeader>
+		  <table>
+		    <tr>
+			  <th>{{tpl:lang Title}}</th>
+			  <th>Date</th>
+			  <th>{{tpl:lang Categories}}</th>
+			  <th>{{tpl:lang Author}}</th>
+			  <th>{{tpl:lang Attachments}}</th>
+			</tr>
+		</tpl:EntriesHeader>
+			  <tr class="{{tpl:EntryIfOdd}}">
+				<td class="th-entry"><a href="{{tpl:EntryURL}}">{{tpl:EntryTitle encode_html="1"}}</a></td>
+				<td class="th-date">{{tpl:EntryDate format="%d %b %Y"}} {{tpl:EntryTime}}</td>
+				<td class="th-categorie">
+				<tpl:EntryIf has_category="1">
+				<a href="{{tpl:EntryCategoryURL}}">{{tpl:EntryCategory encode_html="1"}}</a>
+				</tpl:EntryIf>
+				<tpl:EntryIf has_category="0">
+				{{tpl:lang no category}}
+				</tpl:EntryIf>
+				</td>
+				<td class="th-author">{{tpl:EntryAuthorCommonName}}</td>
+				<td class="th-attachment">{{tpl:EntryAttachmentCount none="0" one="%s" more="%s"}}</td>
+			  </tr>
+		<tpl:EntriesFooter></table></tpl:EntriesFooter>
+	  </tpl:Entries>
+  </div>
+</tpl:Block>

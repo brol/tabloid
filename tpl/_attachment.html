@@ -1,0 +1,42 @@
+<!-- # Attachments -->
+<tpl:EntryIf has_attachment="0">
+<h3>{{tpl:lang no attachment}}</h3>
+<br />
+</tpl:EntryIf>
+
+<tpl:Attachments>
+  <tpl:AttachmentsHeader>
+    <div id="attachments">
+    <ul>
+  </tpl:AttachmentsHeader>
+    <li class="{{tpl:AttachmentType}}">
+				<tpl:AttachmentIf is_audio="1">
+					{{tpl:include src="_audio_player.html"}}
+				</tpl:AttachmentIf>
+				<tpl:AttachmentIf is_video="1">
+					<tpl:AttachmentIf is_flv="0">
+						{{tpl:include src="_video_player.html"}}
+					{{tpl:else}}
+						{{tpl:include src="_flv_player.html"}}
+					</tpl:AttachmentIf>
+				</tpl:AttachmentIf>
+		 <tpl:AttachmentIf is_audio="0" is_video="0">
+			<a href="{{tpl:AttachmentURL}}"
+		title="{{tpl:AttachmentFileName}} ({{tpl:AttachmentSize}})">{{tpl:AttachmentTitle}}</a>
+				</tpl:AttachmentIf>
+	  <tpl:AttachmentIf has_thumb="1">
+		<img src="{{tpl:AttachmentThumbnailURL}}" alt="{{tpl:AttachmentTitle}}" class="left" />
+		<div class="attachment-desc">
+			<h4>{{tpl:AttachmentTitle}}</h4>
+			<p><a href="{{tpl:AttachmentURL}}" title="{{tpl:AttachmentFileName}} ({{tpl:AttachmentSize}})">{{tpl:AttachmentTitle}}</a></p>
+		</div>
+      </tpl:AttachmentIf>
+	  <tpl:AttachmentIf has_thumb="0">
+	   		<a href="{{tpl:AttachmentURL}}" title="{{tpl:AttachmentFileName}} ({{tpl:AttachmentSize}})">{{tpl:AttachmentTitle}}</a>
+      </tpl:AttachmentIf>
+    </li>
+  <tpl:AttachmentsFooter>
+    </ul>
+    </div>
+  </tpl:AttachmentsFooter>
+</tpl:Attachments>

@@ -1,0 +1,104 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: brol <contact@brol.info>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+
+msgid "Posted"
+msgstr "Publié"
+
+msgid "Article"
+msgstr "Article"
+
+msgid "Share"
+msgstr "Partager"
+
+msgid "Be the first to comment on this article"
+msgstr "Soyez le premier à réagir sur cet article"
+
+msgid "Comments are closed"
+msgstr "Les commentaires sont fermés"
+
+msgid "Author"
+msgstr "Auteur"
+
+msgid "Author:"
+msgstr "Auteur :"
+
+msgid "Title"
+msgstr "Titre"
+
+msgid "You Might Also Like"
+msgstr "Voir aussi"
+
+msgid "Read this article"
+msgstr "Voir l'article"
+
+msgid "Recent comments"
+msgstr "Vos réactions"
+
+msgid "Recent articles"
+msgstr "Articles récents"
+
+msgid "Post updated on"
+msgstr "Article modifié le"
+
+msgid "Theme"
+msgstr "Thème"
+
+msgid "Source:"
+msgstr "Source :"
+
+msgid "Stay in touch with the latest news and subscribe to the"
+msgstr "Restez au courant de l'actualité et abonnez-vous au"
+
+msgid "about this category"
+msgstr "de cette catégorie"
+
+msgid "no category"
+msgstr "sans catégorie"
+
+msgid "Subcategories:"
+msgstr "Sous-catégories :"
+
+msgid "of the site"
+msgstr "du site"
+
+msgid "RSS Feed"
+msgstr "Flux RSS"
+
+msgid "Sort"
+msgstr "Trier"
+
+msgid "said"
+msgstr "a écrit"
+
+msgid "said:"
+msgstr "a écrit :"
+
+msgid "Last site update"
+msgstr "Dernière mise à jour"
+
+msgid "next"
+msgstr "suiv"
+
+msgid "prev"
+msgstr "préc"
+
+msgid "category"
+msgstr "catégorie"
+
+msgid "Go to page"
+msgstr "Aller en page"
+
+msgid "no attachment"
+msgstr "aucune annexe"
+
+msgid "In the same category"
+msgstr "Dans la même catégorie"

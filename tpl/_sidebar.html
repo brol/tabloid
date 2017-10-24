@@ -1,0 +1,92 @@
+<!-- # Last Entries -->
+<tpl:SysIf current_mode="!default">
+<tpl:Entries lastn="4" no_context="1">
+    <tpl:EntriesHeader>
+    <div class="mywidget">
+		<div>
+			<h2>{{tpl:lang Recent articles}}<a href="{{tpl:BlogArchiveURL}}" class="archive-bt">{{tpl:lang Archives}}</a></h2>
+			</tpl:EntriesHeader>
+			  <tpl:EntryIf first="1">
+				<div class="latest-news-article">
+					{{tpl:EntryFirstImage size="sq" class="square left" with_category="1"}}
+
+					<h3><a href="{{tpl:EntryURL}}">{{tpl:EntryTitle encode_html="1"}}</a></h3>
+
+					<!-- # --BEHAVIOR-- publicEntryBeforeContent -->
+					{{tpl:SysBehavior behavior="publicEntryBeforeContent"}}
+
+					<!-- # Entry -->
+					<div class="post-content">{{tpl:EntryContent full="1" remove_html="1" encode_html="1" cut_string="150"}}...</div>
+
+					<!-- # --BEHAVIOR-- publicEntryAfterContent -->
+					{{tpl:SysBehavior behavior="publicEntryAfterContent"}}
+				</div>
+				<div class="hr-style1"><hr /></div>
+			  </tpl:EntryIf>
+
+			  <tpl:EntryIf first="0">
+				<p class="post latest-news-article"><a href="{{tpl:EntryURL}}">{{tpl:EntryTitle encode_html="1"}}</a></p>
+				<div class="hr-style1"><hr /></div>
+			  </tpl:EntryIf>
+
+    <tpl:EntriesFooter>
+		</div>
+    </div>
+    </tpl:EntriesFooter>
+</tpl:Entries>
+</tpl:SysIf>
+
+<!-- # Last Comments -->
+<tpl:SysIf current_mode="!post">
+    <tpl:Comments lastn="3" order="desc" with_pings="0">
+    <tpl:CommentsHeader>
+    <div class="mywidget">
+		<div>
+			<h2>{{tpl:lang Recent comments}}</h2>
+			</tpl:CommentsHeader>
+				<!-- # Comment -->
+				<div class="last-comment">
+					  <img src="http://www.gravatar.com/avatar/{{tpl:CommentAuthorMailMD5}}?s=48" alt="{{tpl:CommentAuthor}}" class="avatar left" />
+					  <p class="comment-author"><strong>{{tpl:CommentAuthor}}</strong> {{tpl:lang said:}}</p>
+					  <a href="{{tpl:CommentPostURL}}#c{{tpl:CommentID}}">{{tpl:CommentContent encode_html="1" remove_html="1" cut_string="80"}}...</a><br />
+					  <p class="read-it"><a href="{{tpl:CommentPostURL}}" title="{{tpl:lang Read this article}} {{tpl:CommentEntryTitle}}">{{tpl:lang Read this article}}</a></p>
+				</div>
+				<div class="hr-style2"><hr /></div>
+			<tpl:CommentsFooter>
+		</div>
+    </div>
+    </tpl:CommentsFooter>
+    </tpl:Comments>
+</tpl:SysIf>
+
+<!-- # Trackbacks -->
+<tpl:SysIf current_mode="post">
+    <tpl:EntryIf show_pings="1" has_ping="1">
+        <div class="mywidget">
+			<div>
+				<h2>{{tpl:lang They posted on the same topic}}</h2>
+				<tpl:Pings lastn="4">
+					<div class="latest-ping">
+					  <h3><a href="{{tpl:PingAuthorURL}}" {{tpl:PingNoFollow}}>{{tpl:PingTitle encode_html="1"}}</a></h3>
+
+					  <!-- # --BEHAVIOR-- publicPingBeforeContent -->
+					  {{tpl:SysBehavior behavior="publicPingBeforeContent"}}
+
+					  <div class="post-content">{{tpl:PingContent cut_string="80"}}<span class="readmore-ellipsis">...</span>
+						<br /><small>{{tpl:lang Source:}} <a href="{{tpl:PingAuthorURL}}">{{tpl:PingBlogName}}</a></small>
+					  </div>
+
+					  <!-- # --BEHAVIOR-- publicPingAfterContent -->
+					  {{tpl:SysBehavior behavior="publicPingAfterContent"}}
+					</div>
+					<div class="hr-style1"><hr /></div>
+				  <tpl:PingsFooter>
+					<tpl:EntryIf pings_active="1">
+					<p id="ping-url"><a href="{{tpl:EntryPingLink}}">{{tpl:lang Trackback URL}}</a></p>
+					</tpl:EntryIf>
+				  </tpl:PingsFooter>
+				</tpl:Pings>
+			</div>
+        </div>
+    </tpl:EntryIf>
+</tpl:SysIf>

@@ -1,0 +1,27 @@
+<div id="slider">
+
+	<tpl:Entries lastn="3" selected="1">
+	<div class="post {{tpl:EntryIfOdd}} {{tpl:EntryIfFirst}}" lang="{{tpl:EntryLang}}" role="article">
+
+	  <a href="{{tpl:EntryURL}}">{{tpl:EntryFirstImage size="o" class="featured" with_category="1"}}</a>
+
+	  <div class="featured-post">
+		  <h2 class="post-title"><a href="{{tpl:EntryURL}}">{{tpl:EntryTitle encode_html="1"}}</a></h2>
+
+		  <!-- # --BEHAVIOR-- publicEntryBeforeContent -->
+		  {{tpl:SysBehavior behavior="publicEntryBeforeContent"}}
+
+		  <!-- # Entry -->
+		  <div class="post-content">{{tpl:EntryContent full="1" remove_html="1" encode_html="1" cut_string="150"}}...</div>
+
+		  <!-- # --BEHAVIOR-- publicEntryAfterContent -->
+		  {{tpl:SysBehavior behavior="publicEntryAfterContent"}}
+		  
+		  <tpl:EntryPrevious restrict_to_category="1"><p class="related-article"><a href="{{tpl:EntryURL}}" title="{{tpl:lang In the same category}}">{{tpl:EntryTitle encode_html="1"}}</a></p></tpl:EntryPrevious>
+		  <tpl:EntryNext restrict_to_category="1"><p class="related-article"><a href="{{tpl:EntryURL}}" title="{{tpl:lang In the same category}}">{{tpl:EntryTitle encode_html="1"}}</a></p></tpl:EntryNext>
+	  </div>
+
+	</div>
+	</tpl:Entries>
+
+</div><!-- End #slider -->

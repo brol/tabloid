@@ -1,0 +1,12 @@
+v1.9 - 24-10-2017 - Pierre Van Glabeke
+* html5
+* modifs css
+* ajout configurateur pour choix menu (menu catégories 1er niveau / simpleMenu / aucun menu)
+* nettoyage tpl
+* nettoyage js
+* modifs localisation
+* dc2.12 requis
+* version dc2 jquery : 2.2.4
+* recadrage screenshot
+* remplacement code de partage par code https://www.addtoany.com/buttons/for/website
+* mise à jour jquery

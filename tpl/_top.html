@@ -1,0 +1,42 @@
+<div id="top" role="banner">
+  <div id="toplinks">
+    <div class="left">
+      <ul id="top-navlinks">
+        <li><a href="{{tpl:BlogURL}}">{{tpl:lang Home}}</a> &middot; </li>
+        <li><a href="{{tpl:BlogArchiveURL}}">{{tpl:lang Archives}}</a></li>
+      </ul>
+    </div>
+
+    <div class="right">
+      <p><a href="{{tpl:BlogFeedURL}}" class="feed">{{tpl:lang Subscribe}}</a></p>
+    </div>
+  </div>
+  <h1><a href="{{tpl:BlogURL}}">{{tpl:BlogName encode_html="1"}}</a></h1>
+  <small id="description">{{tpl:BlogDescription encode_html="1"}}</small>
+
+  <form method="get" action="{{tpl:BlogURL}}" id="topsearch">
+    <input type="text" value="{{tpl:lang Search}}..." name="q" id="query" maxlength="255" size="10"
+    onfocus="if(this.value=='{{tpl:lang Search}}...') {this.value=''};" onblur="if(this.value=='') {this.value='{{tpl:lang Search}}...'};" />
+    <input type="submit" value="ok" class="submit" />
+  </form>
+  
+  <nav role="navigation" id="menu">
+  <tpl:Categories level="1">
+	   <tpl:CategoriesHeader><ul></tpl:CategoriesHeader>
+	   <li class="{{tpl:CategoryIfCurrent}}"><a href="{{tpl:CategoryURL}}">{{tpl:CategoryTitle encode_html="1"}}</a></li>
+	   <tpl:CategoriesFooter></ul></tpl:CategoriesFooter>
+	 </tpl:Categories>
+  </nav><!-- Closes Nav -->
+
+  <div id="navsm">
+  {{tpl:SimpleMenu id="supranav" description="title"}}
+  </div>
+	<!-- end #menu -->
+
+  <!-- # --BEHAVIOR-- publicTopAfterContent -->
+  {{tpl:SysBehavior behavior="publicTopAfterContent"}}
+</div>
+
+<p id="prelude" role="navigation"><a href="#main">{{tpl:lang To content}}</a> |
+<a href="#blognav">{{tpl:lang To menu}}</a> |
+<a href="#search">{{tpl:lang To search}}</a></p>

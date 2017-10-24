@@ -1,0 +1,71 @@
+/* BEGIN LICENSE BLOCK ----------------------------------
+#
+# This file is part of Tabloid, a Dotclear 2 theme.
+#
+# Copyright (c) 2010-2017 Azork
+# Contributor: Pierre Van Glabeke - https://github.com/brol/tabloid
+# Licensed under the GPL version 2.0 license.
+# See LICENSE file or
+# http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+#
+# -- END LICENSE BLOCK --------------------------------- */
+#navsm {display:none;}
+
+#menu {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 960px;
+}
+
+#menu ul {
+  list-style: none;
+  color: #7391a3;
+  padding: 2px 2px 0 2px;
+  margin: 0;
+  height: 25px;
+  background: transparent url(img/categoriesBG.png) no-repeat top left;
+}
+
+#menu li {
+  float: left;
+  line-height: 25px;
+}
+
+#menu a {
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  display: block;
+  padding: 0 8px;
+	float: left;
+}
+#menu a:hover {
+	background: #4f7083;
+	text-decoration: none;
+	-webkit-border-top-left-radius: 2px;
+	-webkit-border-top-right-radius: 2px;
+	-moz-border-radius-topleft: 2px;
+	-moz-border-radius-topright: 2px;
+	border-top-left-radius: 2px;
+	border-top-right-radius: 2px;
+}
+
+#menu li.category-current a {
+  background: #fff !important;
+	color: #375769;
+  text-decoration: none;
+	-webkit-border-top-left-radius: 2px;
+	-webkit-border-top-right-radius: 2px;
+	-moz-border-radius-topleft: 2px;
+	-moz-border-radius-topright: 2px;
+	border-top-left-radius: 2px;
+	border-top-right-radius: 2px;
+}
+
+#menu li ul,
+#menu li ul ul,
+#menu li ul ul ul {
+  position: absolute;
+  left: -999em;
+}
