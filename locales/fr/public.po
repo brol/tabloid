@@ -1,89 +1,135 @@
+# Language: Français
+# Module: tabloid - 2.0
+# Date: 2017-10-30 22:37:52
+# Translated with translater 2017.05.10
+
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Project-Id-Version: tabloid 2.0\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: \n"
-"Last-Translator: brol <contact@brol.info>\n"
+"PO-Revision-Date: 2017-10-30T22:37:52+00:00\n"
+"Last-Translator: brol\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.7\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-msgid "Posted"
-msgstr "Publié"
+#: tpl/_attachment.html:3
+msgid "no attachment"
+msgstr "aucune annexe"
 
-msgid "Article"
-msgstr "Article"
-
-msgid "Share"
-msgstr "Partager"
-
-msgid "Be the first to comment on this article"
-msgstr "Soyez le premier à réagir sur cet article"
-
+#: tpl/_comment.html:2
 msgid "Comments are closed"
 msgstr "Les commentaires sont fermés"
 
-msgid "Author"
-msgstr "Auteur"
+#: tpl/_comment.html:7
+msgid "Be the first to comment on this article"
+msgstr "Soyez le premier à réagir sur cet article"
 
-msgid "Author:"
-msgstr "Auteur :"
-
-msgid "Title"
-msgstr "Titre"
-
-msgid "You Might Also Like"
-msgstr "Voir aussi"
-
-msgid "Read this article"
-msgstr "Voir l'article"
-
-msgid "Recent comments"
-msgstr "Vos réactions"
-
-msgid "Recent articles"
-msgstr "Articles récents"
-
-msgid "Post updated on"
-msgstr "Article modifié le"
-
+#: tpl/_footer.html:7
 msgid "Theme"
 msgstr "Thème"
 
-msgid "Source:"
-msgstr "Source :"
+#: tpl/_footer.html:8
+msgid "Last site update"
+msgstr "Dernière mise à jour"
 
-msgid "Stay in touch with the latest news and subscribe to the"
-msgstr "Restez au courant de l'actualité et abonnez-vous au"
+#: tpl/_sidebar.html:7
+msgid "Recent articles"
+msgstr "Articles récents"
 
-msgid "about this category"
-msgstr "de cette catégorie"
+#: tpl/_sidebar.html:45
+msgid "Recent comments"
+msgstr "Vos réactions"
 
-msgid "no category"
-msgstr "sans catégorie"
-
-msgid "Subcategories:"
-msgstr "Sous-catégories :"
-
-msgid "of the site"
-msgstr "du site"
-
-msgid "RSS Feed"
-msgstr "Flux RSS"
-
-msgid "Sort"
-msgstr "Trier"
-
-msgid "said"
-msgstr "a écrit"
-
+#: tpl/_sidebar.html:50
 msgid "said:"
 msgstr "a écrit :"
 
-msgid "Last site update"
-msgstr "Dernière mise à jour"
+#: tpl/_sidebar.html:52
+#: tpl/_sidebar.html:52
+msgid "Read this article"
+msgstr "Voir l'article"
+
+#: tpl/_sidebar.html:76
+msgid "Source:"
+msgstr "Source :"
+
+#: tpl/archive.html:26
+#: tpl/archive_month.html:32
+#: tpl/tags.html:24
+msgid "Sort"
+msgstr "Trier"
+
+#: tpl/archive.html:28
+#: tpl/archive_month.html:34
+msgid "date"
+msgstr "date"
+
+#: tpl/archive.html:45
+msgid "category"
+msgstr "catégorie"
+
+#: tpl/archive_month.html:79
+msgid "no category"
+msgstr "sans catégorie"
+
+#: tpl/categories-home.html:37
+#: tpl/categories-home.html:77
+#: tpl/categories-home.html:122
+#: tpl/featured-home.html:20
+#: tpl/featured-home.html:21
+msgid "In the same category"
+msgstr "Dans la même catégorie"
+
+#: tpl/category.html:61
+msgid "Subcategories:"
+msgstr "Sous-catégories :"
+
+#: tpl/page.html:15
+#: tpl/post.html:62
+msgid "Posted"
+msgstr "Publié"
+
+#: tpl/page.html:22
+#: tpl/post.html:72
+msgid "Article"
+msgstr "Article"
+
+#: tpl/page.html:44
+#: tpl/post.html:94
+msgid "Post updated on"
+msgstr "Article modifié le"
+
+#: tpl/page.html:52
+#: tpl/post.html:102
+msgid "Stay in touch with the latest news and subscribe to the"
+msgstr "Restez au courant de l'actualité et abonnez-vous au"
+
+#: tpl/page.html:53
+#: tpl/post.html:103
+msgid "RSS Feed"
+msgstr "Flux RSS"
+
+#: tpl/page.html:54
+msgid "of the site"
+msgstr "du site"
+
+#: tpl/post.html:104
+msgid "about this category"
+msgstr "de cette catégorie"
+
+#: tpl/post.html:130
+msgid "You Might Also Like"
+msgstr "Voir aussi"
+
+#: tpl/user_share.html:3
+msgid "Share"
+msgstr "Partager"
+
+msgid "said"
+msgstr "a écrit"
 
 msgid "next"
 msgstr "suiv"
@@ -91,14 +137,6 @@ msgstr "suiv"
 msgid "prev"
 msgstr "préc"
 
-msgid "category"
-msgstr "catégorie"
-
 msgid "Go to page"
 msgstr "Aller en page"
 
-msgid "no attachment"
-msgstr "aucune annexe"
-
-msgid "In the same category"
-msgstr "Dans la même catégorie"

@@ -23,9 +23,9 @@
      <tpl:ArchivesHeader>
      <form method="get" action="" id="archives">
        <fieldset>
-         <label for="archives">{{tpl:lang Sort}} {{tpl:lang by}}</label>
-         <select name="archives" onchange="location = this.options[this.selectedIndex].value;">
-		      <option value="" selected="selected">{{tpl:lang Date}}</option>
+         <label for="archive">{{tpl:lang Sort}} {{tpl:lang by}}</label>
+         <select id="archive" name="archive" onchange="location = this.options[this.selectedIndex].value;">
+		      <option value="" selected="selected">{{tpl:lang date}}</option>
          </tpl:ArchivesHeader>
          <tpl:ArchivesYearHeader>
            <optgroup label="{{tpl:ArchiveDate format="%Y"}}">

@@ -16,7 +16,7 @@ $this->registerModule(
 	/* Name */			"Tabloid",
 	/* Description*/	"Fully customizable theme",
 	/* Author */		"Azork, Pierre Van Glabeke",
-	/* Version */		'1.9',
+	/* Version */		'2.0',
 	array(
 		'type'	 =>	'theme',
 		'tplset' => 'mustek',
