@@ -32,18 +32,24 @@ function tabloidmenu_publicHeadContent()
 
 # Exclude Current Post
 # Source: http://tips.dotaddict.org/
-dcCore::app()->addBehavior('templateBeforeBlock',array('behaviorsExcludeCurrentPost','templateBeforeBlock'));
+\dcCore::app()->addBehavior('templateBeforeBlockV2', [__NAMESPACE__ . '\behaviorsExcludeCurrentPost','templateBeforeBlock']);
+
+use ArrayObject;
+
 class behaviorsExcludeCurrentPost
 {
-    public static function templateBeforeBlock($core,$b,$attr)
+    public static function templateBeforeBlock(string $block, ArrayObject $attr): string
     {
-	   if ($b == 'Entries' && isset($attr['exclude_current']) && $attr['exclude_current'] == 1)
-	   {
-		   return
-		   "<?php\n".
-		   '$params["sql"] = "AND P.post_url != \'".dcCore::app()->ctx->posts->post_url."\' ";'."\n".
-		   "?>\n";
-	   }
+        if ($block == 'Entries' && isset($attr['exclude_current']) && $attr['exclude_current'] == 1) {
+            return
+            "<?php\n" .
+            "if (!isset(\$params)) { \$params = []; }\n" .
+            "if (!isset(\$params['sql'])) { \$params['sql'] = ''; }\n" .
+            '$params["sql"] .= "AND P.post_url != \'".dcCore::app()->ctx->posts->post_url."\' ";' . "\n" .
+            "?>\n";
+        }
+
+        return '';
     }
 }
 

@@ -13,7 +13,7 @@
 <tpl:Block name="head-linkrel">
 	<link rel="contents" href="{{tpl:BlogArchiveURL}}" title="{{tpl:lang Archives}}" />
 	<tpl:EntryIf pings_active="1"><link rel="pingback" href="{{tpl:BlogXMLRPCURL}}" /></tpl:EntryIf>
-
+	
 	<tpl:EntryNext><link rel="next" href="{{tpl:EntryURL}}"
 	title="{{tpl:EntryTitle encode_html="1"}}" /></tpl:EntryNext>
 
@@ -173,11 +173,7 @@
     </tpl:Entries>
 
 	<p id="navlinks">
-		<tpl:EntryPrevious><a href="{{tpl:EntryURL}}"
-		title="{{tpl:EntryTitle encode_html="1"}}" class="prev left">&#171; {{tpl:EntryTitle encode_html="1"
-		cut_string="50"}}</a></tpl:EntryPrevious>
-		<tpl:EntryNext><a href="{{tpl:EntryURL}}"
-		title="{{tpl:EntryTitle encode_html="1"}}" class="next right">{{tpl:EntryTitle encode_html="1"
-		cut_string="50"}} &#187;</a></tpl:EntryNext>
+		<tpl:EntryPrevious restrict_to_category="1"><span class="prev left">&#171; <a href="{{tpl:EntryURL}}" title="{{tpl:EntryTitle encode_html="1"}}" class="prev">{{tpl:EntryTitle encode_html="1" cut_string="50"}}</a></span></tpl:EntryPrevious>
+	    <tpl:EntryNext restrict_to_category="1"><span class="next right"><a href="{{tpl:EntryURL}}" title="{{tpl:EntryTitle encode_html="1"}}" class="next">{{tpl:EntryTitle encode_html="1" cut_string="50"}}</a> &#187;</span></tpl:EntryNext>
 	</p>
 </tpl:Block>
