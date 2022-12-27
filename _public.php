@@ -13,27 +13,26 @@
 # empêcher l'exécution du fichier en dehors de Dotclear
 if (!defined('DC_RC_PATH')) { return; }
 
-# Add New Translation English/French
-l10n::set(dirname(__FILE__).'/locales/'.$_lang.'/public');
-l10n::set(dirname(__FILE__).'/locales/'.$_lang.'/main');
+# Translation
+l10n::set(dirname(__FILE__) . '/locales/' . dcCore::app()->lang. '/public');
 
 # appel css menu
-$core->addBehavior('publicHeadContent','tabloidmenu_publicHeadContent');
+dcCore::app()->addBehavior('publicHeadContent','tabloidmenu_publicHeadContent');
 
-function tabloidmenu_publicHeadContent($core)
+function tabloidmenu_publicHeadContent()
 {
-	$style = $core->blog->settings->themes->tabloid_menu;
-	if (!preg_match('/^menu-cat|simplemenu|menu-no$/',$style)) {
+	$style = dcCore::app()->blog->settings->themes->tabloid_menu;
+	if (!preg_match('/^menu-cat|simplemenu|menu-no$/', (string) $style)) {
 		$style = 'menu-cat';
 	}
 
-	$url = $core->blog->settings->system->themes_url.'/'.$core->blog->settings->system->theme;
+	$url = dcCore::app()->blog->settings->system->themes_url.'/'.dcCore::app()->blog->settings->system->theme;
 	echo '<link rel="stylesheet" type="text/css" media="screen" href="'.$url."/".$style.".css\" />\n";
 }
 
 # Exclude Current Post
 # Source: http://tips.dotaddict.org/
-$core->addBehavior('templateBeforeBlock',array('behaviorsExcludeCurrentPost','templateBeforeBlock'));
+dcCore::app()->addBehavior('templateBeforeBlock',array('behaviorsExcludeCurrentPost','templateBeforeBlock'));
 class behaviorsExcludeCurrentPost
 {
     public static function templateBeforeBlock($core,$b,$attr)
@@ -42,7 +41,7 @@ class behaviorsExcludeCurrentPost
 	   {
 		   return
 		   "<?php\n".
-		   '$params["sql"] = "AND P.post_url != \'".$_ctx->posts->post_url."\' ";'."\n".
+		   '$params["sql"] = "AND P.post_url != \'".dcCore::app()->ctx->posts->post_url."\' ";'."\n".
 		   "?>\n";
 	   }
     }
@@ -51,8 +50,8 @@ class behaviorsExcludeCurrentPost
 
 # Add a new class 'category-current' for the parent category
 # Source: http://forum.dotclear.net/viewtopic.php?id=37514
-$core->addBehavior('templateBeforeBlock',array('tabloidBehavior','block'));
-$core->tpl->addValue('CategoryIfCurrent',array('tabloidTpl','CategoryIfCurrent'));
+dcCore::app()->addBehavior('templateBeforeBlock',array('tabloidBehavior','block'));
+dcCore::app()->tpl->addValue('CategoryIfCurrent',array('tabloidTpl','CategoryIfCurrent'));
 
 class tabloidBehavior
 {
@@ -63,17 +62,17 @@ class tabloidBehavior
 
 		if ($args[0] == 'Categories') {
 			$p =
-			'<?php if ($core->url->type != "home") { '.
-				'if ($_ctx->exists("categories")) { '.
-					'$_ctx->current_cat_id = $_ctx->categories->cat_id; '.
-					'$cat_id = $_ctx->categories->cat_id; '.
-					'$rs = $core->blog->getCategoryParent($cat_id); '.
-					'$_ctx->current_cat_parent_id = $rs->isEmpty() ? 0 : (integer) $rs->cat_id;'. 
-				'} elseif ($core->url->type != "home" && $_ctx->exists("posts")) { '.
-					'$_ctx->current_cat_id = $_ctx->posts->cat_id; '.
-					'$cat_id = $_ctx->posts->cat_id; '.
-					'$rs = $core->blog->getCategoryParent($cat_id); '.
-					'$_ctx->current_cat_parent_id = $rs->isEmpty() ? 0 : (integer) $rs->cat_id;'.
+			'<?php if (dcCore::app()->url->type != "home") { '.
+				'if (dcCore::app()->ctx->exists("categories")) { '.
+					'dcCore::app()->ctx->current_cat_id = dcCore::app()->ctx->categories->cat_id; '.
+					'$cat_id = dcCore::app()->ctx->categories->cat_id; '.
+					'$rs = dcCore::app()->blog->getCategoryParent($cat_id); '.
+					'dcCore::app()->ctx->current_cat_parent_id = $rs->isEmpty() ? 0 : (integer) $rs->cat_id;'. 
+				'} elseif (dcCore::app()->url->type != "home" && dcCore::app()->ctx->exists("posts")) { '.
+					'dcCore::app()->ctx->current_cat_id = dcCore::app()->ctx->posts->cat_id; '.
+					'$cat_id = dcCore::app()->ctx->posts->cat_id; '.
+					'$rs = dcCore::app()->blog->getCategoryParent($cat_id); '.
+					'dcCore::app()->ctx->current_cat_parent_id = $rs->isEmpty() ? 0 : (integer) $rs->cat_id;'.
 				'}'.
 			"} ?>\n";
 			return $p;
@@ -88,8 +87,8 @@ class tabloidTpl {
 		$ret = html::escapeHTML($ret);
 		$dummy = 'category-not-current';
 		$p =
-		'<?php if ($_ctx->exists("current_cat_id")) { '.
-		'if ($_ctx->categories->cat_id == $_ctx->current_cat_id || $_ctx->categories->cat_id == $_ctx->current_cat_parent_id) { '.
+		'<?php if (dcCore::app()->ctx->exists("current_cat_id")) { '.
+		'if (dcCore::app()->ctx->categories->cat_id == dcCore::app()->ctx->current_cat_id || dcCore::app()->ctx->categories->cat_id == dcCore::app()->ctx->current_cat_parent_id) { '.
 			"echo '".addslashes($ret)."'; } ".
 		'else { '.
 		"echo '".$dummy."'; } ".
@@ -102,7 +101,7 @@ class tabloidTpl {
 
 # Check if current post has been updated
 # Source: http://forum.dotclear.net/viewtopic.php?id=44438
-$core->tpl->addBlock('IfPostUpDate',array('IfPostUpDateTabloid','IfPostUpDate'));
+dcCore::app()->tpl->addBlock('IfPostUpDate',array('IfPostUpDateTabloid','IfPostUpDate'));
 class IfPostUpDateTabloid
 {
 	public static function IfPostUpDate($attr,$content)
@@ -126,7 +125,7 @@ class IfPostUpDateTabloid
 				$m = $delay[2];
 		}
 		$t = ($j * 1440) + ($h * 60) + $m;
-		$p = 'if (round((strtotime($_ctx->posts->post_upddt) - strtotime($_ctx->posts->post_creadt)) / 60) > '.$t.'){';
+		$p = 'if (round((strtotime(dcCore::app()->ctx->posts->post_upddt) - strtotime(dcCore::app()->ctx->posts->post_creadt)) / 60) > '.$t.'){';
 		return '<?php '.$p.' ?>'.
 		$content.
 		'<?php } ?>';
@@ -136,7 +135,7 @@ class IfPostUpDateTabloid
 
 # Add new pagination
 # Source: http://tips.dotaddict.org/
-$core->tpl->addValue('PaginationLinks', array('tplMyPagination', 'PaginationLinks'));
+dcCore::app()->tpl->addValue('PaginationLinks', array('tplMyPagination', 'PaginationLinks'));
 class tplMyPagination {
 	public static function PaginationLinks($attr)
 	{
@@ -172,12 +171,12 @@ class tplMyPagination {
 		} else {
 			$current = 1;
 		}
-		if ($_ctx->exists("pagination")) {
-			$nb_posts = $_ctx->pagination->f(0);
+		if (dcCore::app()->ctx->exists("pagination")) {
+			$nb_posts = dcCore::app()->ctx->pagination->f(0);
 		}
 		
 		/* Variables to tweak the pagination system */
-		$nb_per_page = $_ctx->post_params["limit"][1];
+		$nb_per_page = dcCore::app()->ctx->post_params["limit"][1];
 		$nb_pages = ceil($nb_posts/$nb_per_page);
 		$nb_sequence = 2 * 3 + 1;
 		
@@ -212,12 +211,12 @@ class tplMyPagination {
 
 
 # Ajax search URL (Modified code from Olivier Meunier http://themes.dotaddict.org/galerie-dc2/details/Noviny)
-$core->url->register('ajaxsearch','ajaxsearch','^ajaxsearch(?:(?:/)(.*))?$',array('webSearch','ajaxsearch'));
+dcCore::app()->url->register('ajaxsearch','ajaxsearch','^ajaxsearch(?:(?:/)(.*))?$',array('webSearch','ajaxsearch'));
 class webSearch
 {
 	public static function ajaxsearch($args)
 	{
-		global $core;
+		dcCore::app();
 		$res = '';
 		$term = $_GET['term'];
 		
@@ -228,7 +227,7 @@ class webSearch
             }
 	
 			$q = rawurldecode($term);
-			$rs = $core->blog->getPosts(array(
+			$rs = dcCore::app()->blog->getPosts(array(
 				'search' => $q,
 				'limit' => 5,
 				'no_content' => 1

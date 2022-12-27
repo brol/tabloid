@@ -1,14 +1,15 @@
 # Language: Français
-# Module: tabloid - 2.0
-# Date: 2017-10-30 22:37:52
-# Translated with translater 2017.05.10
+# Module: tabloid - 2.1
+# Date: 2022-12-26 18:35:14
+# Author: Pierre Van Glabeke
+# Translated with translater 2022.12.22
 
 msgid ""
 msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
-"Project-Id-Version: tabloid 2.0\n"
+"Project-Id-Version: tabloid 2.1\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2017-10-30T22:37:52+00:00\n"
+"PO-Revision-Date: 2022-12-26T18:35:14+00:00\n"
 "Last-Translator: brol\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -31,6 +32,10 @@ msgstr "Soyez le premier à réagir sur cet article"
 msgid "Theme"
 msgstr "Thème"
 
+#: tpl/_footer.html:7
+msgid "and"
+msgstr "et"
+
 #: tpl/_footer.html:8
 msgid "Last site update"
 msgstr "Dernière mise à jour"
@@ -47,7 +52,6 @@ msgstr "Vos réactions"
 msgid "said:"
 msgstr "a écrit :"
 
-#: tpl/_sidebar.html:52
 #: tpl/_sidebar.html:52
 msgid "Read this article"
 msgstr "Voir l'article"
@@ -76,10 +80,7 @@ msgid "no category"
 msgstr "sans catégorie"
 
 #: tpl/categories-home.html:37
-#: tpl/categories-home.html:77
-#: tpl/categories-home.html:122
 #: tpl/featured-home.html:20
-#: tpl/featured-home.html:21
 msgid "In the same category"
 msgstr "Dans la même catégorie"
 
@@ -88,27 +89,27 @@ msgid "Subcategories:"
 msgstr "Sous-catégories :"
 
 #: tpl/page.html:15
-#: tpl/post.html:62
+#: tpl/post.html:65
 msgid "Posted"
 msgstr "Publié"
 
 #: tpl/page.html:22
-#: tpl/post.html:72
+#: tpl/post.html:75
 msgid "Article"
 msgstr "Article"
 
 #: tpl/page.html:44
-#: tpl/post.html:94
+#: tpl/post.html:97
 msgid "Post updated on"
 msgstr "Article modifié le"
 
 #: tpl/page.html:52
-#: tpl/post.html:102
+#: tpl/post.html:105
 msgid "Stay in touch with the latest news and subscribe to the"
 msgstr "Restez au courant de l'actualité et abonnez-vous au"
 
 #: tpl/page.html:53
-#: tpl/post.html:103
+#: tpl/post.html:106
 msgid "RSS Feed"
 msgstr "Flux RSS"
 
@@ -116,11 +117,11 @@ msgstr "Flux RSS"
 msgid "of the site"
 msgstr "du site"
 
-#: tpl/post.html:104
+#: tpl/post.html:107
 msgid "about this category"
 msgstr "de cette catégorie"
 
-#: tpl/post.html:130
+#: tpl/post.html:133
 msgid "You Might Also Like"
 msgstr "Voir aussi"
 

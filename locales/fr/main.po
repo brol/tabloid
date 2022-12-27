@@ -1,14 +1,15 @@
 # Language: Français
-# Module: tabloid - 2.0
-# Date: 2017-10-30 22:37:52
-# Translated with translater 2017.05.10
+# Module: tabloid - 2.1
+# Date: 2022-12-26 18:35:14
+# Author: Pierre Van Glabeke
+# Translated with translater 2022.12.22
 
 msgid ""
 msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
-"Project-Id-Version: tabloid 2.0\n"
+"Project-Id-Version: tabloid 2.1\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2017-10-30T22:37:52+00:00\n"
+"PO-Revision-Date: 2022-12-26T18:35:14+00:00\n"
 "Last-Translator: brol\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"

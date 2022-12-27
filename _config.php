@@ -13,18 +13,16 @@
 
 if (!defined('DC_CONTEXT_ADMIN')) { return; }
 
-global $core;
-
 //PARAMS
 
 # Translations
-l10n::set(dirname(__FILE__).'/locales/'.$_lang.'/main');
+l10n::set(__DIR__ . '/locales/' . dcCore::app()->lang . '/main');
 
 # Default values
 $default_menu = 'menu-cat';
 
 # Settings
-$my_menu = $core->blog->settings->themes->tabloid_menu;
+$my_menu = dcCore::app()->blog->settings->themes->tabloid_menu;
 
 # Menu type
 $tabloid_menu_combo = array(
@@ -39,7 +37,7 @@ if (!empty($_POST))
 {
 	try
 	{
-		$core->blog->settings->addNamespace('themes');
+		dcCore::app()->blog->settings->addNamespace('themes');
 
 		# Menu type
 		if (!empty($_POST['tabloid_menu']) && in_array($_POST['tabloid_menu'],$tabloid_menu_combo))
@@ -51,19 +49,19 @@ if (!empty($_POST))
 			$my_menu = $default_menu;
 
 		}
-		$core->blog->settings->themes->put('tabloid_menu',$my_menu,'string','Menu to display',true);
+		dcCore::app()->blog->settings->themes->put('tabloid_menu',$my_menu,'string','Menu to display',true);
 
 		// Blog refresh
-		$core->blog->triggerBlog();
+		dcCore::app()->blog->triggerBlog();
 
 		// Template cache reset
-		$core->emptyTemplatesCache();
+		dcCore::app()->emptyTemplatesCache();
 
 		dcPage::success(__('Theme configuration has been successfully updated.'),true,true);
 	}
 	catch (Exception $e)
 	{
-		$core->error->add($e->getMessage());
+		dcCore::app()->error->add($e->getMessage());
 	}
 }
 

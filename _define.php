@@ -10,16 +10,17 @@
 # http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 #
 # -- END LICENSE BLOCK ---------------------------------
-if (!defined('DC_RC_PATH')) { return; }
-
+if (!defined('DC_RC_PATH')) {
+    return;
+}
 $this->registerModule(
-	/* Name */			"Tabloid",
-	/* Description*/	"Fully customizable theme",
-	/* Author */		"Azork, Pierre Van Glabeke",
-	/* Version */		'2.0',
-	array(
-		'type'	 =>	'theme',
-		'tplset' => 'mustek',
-		'dc_min' => '2.12'
-	)
+    'Tabloid',
+    'Fully customizable theme',
+    'Azork, Pierre Van Glabeke',
+    '2.1',
+    [
+        'requires' => [['core', '2.24']],
+        'type'     => 'theme',
+        'tplset'   => 'mustek',
+    ]
 );
