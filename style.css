@@ -9,14 +9,12 @@
  * @copyright GPL-2.0 https://www.gnu.org/licenses/gpl-2.0.html
  */
 
-html { background: #a6c4d6 url("img/body-bg3.png") repeat-x fixed top left; }
-
 body {
   margin: 0;
   padding: 0;
   color: #444;
   font: 62.5%/1.5em Arial,sans-serif;
-	background: transparent url("img/shadow.png") repeat-y top center;
+	background: #a6c4d6 url(img/body.png) repeat-x fixed top left;
 }
 
 a:link, a:visited {
@@ -148,13 +146,18 @@ h6 {
 	overflow: hidden;
 	margin: 0 auto;
 	width: 1011px;
-	background: #fff url(img/body-bg.png) repeat-x top;
+	background: #fff;
+	box-shadow: 1px 1px 12px #222;
 }
 
 #top {
+	background: linear-gradient(to bottom, #456072 0%,#5a8098 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+#top .container {
+	width: 960px;
   position: relative;
   height: 150px;
-  width: 960px;
   padding: 0;
   margin: 0 auto;
 }
@@ -370,7 +373,7 @@ h6 {
 #sidebar li {
   margin: 0.2em 0;
   padding: 0 0 0 12px;
-  background: transparent url("img/grey-arrow.png") no-repeat scroll 0 6px;
+  background: transparent url(img/grey-arrow.png) no-repeat scroll 0 6px;
 }
 #sidebar li a {
   color: #333333;
@@ -1185,7 +1188,7 @@ ul.tags li {
   padding-left: 0 !important;
 }
 #custom .links li {
-	background: transparent url("img/grey-arrow.png") no-repeat 0 5px;
+	background: transparent url(img/grey-arrow.png) no-repeat 0 5px;
 	padding: 0 0 0 12px;
 }
 
@@ -1316,7 +1319,7 @@ ul.tags li {
   position: absolute;
 	left: 320px;
 	top: 0;
-	background: transparent url("img/featuredBG.png") repeat top left;
+	background: transparent url(img/featuredBG.png) repeat top left;
 	width: 260px;
 	padding: 20px;
 }
@@ -1328,7 +1331,7 @@ ul.tags li {
 	margin-bottom: 1.5em;
 }
 #slider .featured-post .related-article {
-	background: transparent url("img/whitebullet.png") no-repeat 0 6px;
+	background: transparent url(img/whitebullet.png) no-repeat 0 6px;
 	padding-left: 12px;
 	margin: .2em 0 0 0;
 }
