@@ -97,7 +97,7 @@
 
         <div id="author">
           <div class="author-description">
-            <img src="{{tpl:BlogPublicURL}}/{{tpl:EntryAuthorID}}.jpg" class="avatar left" alt="{{tpl:EntryAuthorCommonName}}" />
+            <img src="{{tpl:BlogPublicURL}}/{{tpl:EntryAuthorID}}.png" class="avatar left" alt="{{tpl:EntryAuthorCommonName}}" />
             <h4>{{tpl:lang Author:}} {{tpl:EntryAuthorCommonName}}</h4>
             <p>
               {{tpl:lang Stay in touch with the latest news and subscribe to the}}
@@ -173,7 +173,7 @@
     </tpl:Entries>
 
 	<p id="navlinks">
-		<tpl:EntryPrevious restrict_to_category="1"><span class="prev left">&#171; <a href="{{tpl:EntryURL}}" title="{{tpl:EntryTitle encode_html="1"}}" class="prev">{{tpl:EntryTitle encode_html="1" cut_string="50"}}</a></span></tpl:EntryPrevious>
-	    <tpl:EntryNext restrict_to_category="1"><span class="next right"><a href="{{tpl:EntryURL}}" title="{{tpl:EntryTitle encode_html="1"}}" class="next">{{tpl:EntryTitle encode_html="1" cut_string="50"}}</a> &#187;</span></tpl:EntryNext>
+		<tpl:EntryPrevious><span class="prev left">&#171; <a href="{{tpl:EntryURL}}" title="{{tpl:EntryTitle encode_html="1"}}" class="prev">{{tpl:EntryTitle encode_html="1" cut_string="50"}}</a></span></tpl:EntryPrevious>
+	    <tpl:EntryNext><span class="next right"><a href="{{tpl:EntryURL}}" title="{{tpl:EntryTitle encode_html="1"}}" class="next">{{tpl:EntryTitle encode_html="1" cut_string="50"}}</a> &#187;</span></tpl:EntryNext>
 	</p>
 </tpl:Block>

@@ -1,16 +1,16 @@
 # Language: Français
-# Module: tabloid - 2.1
-# Date: 2022-12-26 18:35:14
+# Module: tabloid - 2.1-dev
+# Date: 2023-02-03 23:57:30
 # Author: Pierre Van Glabeke
-# Translated with translater 2022.12.22
+# Translated with translater 2022.12.26
 
 msgid ""
 msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
-"Project-Id-Version: tabloid 2.1\n"
+"Project-Id-Version: tabloid 2.1-dev\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2022-12-26T18:35:14+00:00\n"
-"Last-Translator: brol\n"
+"PO-Revision-Date: 2023-02-03T23:57:30+00:00\n"
+"Last-Translator: Pierre Van Glabeke\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -75,6 +75,12 @@ msgstr "date"
 msgid "category"
 msgstr "catégorie"
 
+#: tpl/archive.html:67
+#: tpl/archive_month.html:67
+#: tpl/tags.html:55
+msgid "Author"
+msgstr "Auteur·rice"
+
 #: tpl/archive_month.html:79
 msgid "no category"
 msgstr "sans catégorie"
@@ -89,27 +95,27 @@ msgid "Subcategories:"
 msgstr "Sous-catégories :"
 
 #: tpl/page.html:15
-#: tpl/post.html:65
+#: tpl/post.html:63
 msgid "Posted"
 msgstr "Publié"
 
 #: tpl/page.html:22
-#: tpl/post.html:75
+#: tpl/post.html:73
 msgid "Article"
 msgstr "Article"
 
 #: tpl/page.html:44
-#: tpl/post.html:97
+#: tpl/post.html:95
 msgid "Post updated on"
 msgstr "Article modifié le"
 
 #: tpl/page.html:52
-#: tpl/post.html:105
+#: tpl/post.html:103
 msgid "Stay in touch with the latest news and subscribe to the"
 msgstr "Restez au courant de l'actualité et abonnez-vous au"
 
 #: tpl/page.html:53
-#: tpl/post.html:106
+#: tpl/post.html:104
 msgid "RSS Feed"
 msgstr "Flux RSS"
 
@@ -117,13 +123,32 @@ msgstr "Flux RSS"
 msgid "of the site"
 msgstr "du site"
 
-#: tpl/post.html:107
+#: tpl/post.html:105
 msgid "about this category"
 msgstr "de cette catégorie"
 
-#: tpl/post.html:133
+#: tpl/post.html:131
 msgid "You Might Also Like"
 msgstr "Voir aussi"
+
+#: tpl/tag.html:4
+#: tpl/tags.html:26
+msgid "Tag"
+msgstr "Mot-clé"
+
+#: tpl/tag.html:40
+#: tpl/tags.html:45
+msgid "This tag's entries Atom feed"
+msgstr "Flux Atom des billets associés à ce mot-clé"
+
+#: tpl/tag.html:44
+#: tpl/tags.html:48
+msgid "This tag's comments Atom feed"
+msgstr "Flux Atom des commentaires associés à ce mot-clé"
+
+#: tpl/tags.html:4
+msgid "Tags"
+msgstr "Mots-clés"
 
 #: tpl/user_share.html:3
 msgid "Share"

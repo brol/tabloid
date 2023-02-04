@@ -1,14 +1,13 @@
-/* BEGIN LICENSE BLOCK ----------------------------------
-#
-# This file is part of Tabloid, a Dotclear 2 theme.
-#
-# Copyright (c) 2010-2017 Azork
-# Contributor: Pierre Van Glabeke - https://github.com/brol/tabloid
-# Licensed under the GPL version 2.0 license.
-# See LICENSE file or
-# http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
-#
-# -- END LICENSE BLOCK --------------------------------- */
+/**
+ * @brief Tabloid, a theme for Dotclear 2
+ *
+ * @package Dotclear
+ * @subpackage Theme
+ *
+ * @author Azork (http://xtradotfreedotfr.free.fr/blog/), Pierre Van Glabeke
+ *
+ * @copyright GPL-2.0 https://www.gnu.org/licenses/gpl-2.0.html
+ */
 #navsm {display:none;}
 
 #menu {
@@ -43,10 +42,6 @@
 #menu a:hover {
 	background: #4f7083;
 	text-decoration: none;
-	-webkit-border-top-left-radius: 2px;
-	-webkit-border-top-right-radius: 2px;
-	-moz-border-radius-topleft: 2px;
-	-moz-border-radius-topright: 2px;
 	border-top-left-radius: 2px;
 	border-top-right-radius: 2px;
 }
@@ -55,10 +50,6 @@
   background: #fff !important;
 	color: #375769;
   text-decoration: none;
-	-webkit-border-top-left-radius: 2px;
-	-webkit-border-top-right-radius: 2px;
-	-moz-border-radius-topleft: 2px;
-	-moz-border-radius-topright: 2px;
 	border-top-left-radius: 2px;
 	border-top-right-radius: 2px;
 }

@@ -1,15 +1,14 @@
 <?php
-# BEGIN LICENSE BLOCK ----------------------------------
-#
-# This file is part of Tabloid, a Dotclear 2 theme.
-#
-# Copyright (c) 2010-2017 Azork
-# Contributor: Pierre Van Glabeke - https://github.com/brol/tabloid
-# Licensed under the GPL version 2.0 license.
-# See LICENSE file or
-# http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
-#
-# -- END LICENSE BLOCK ---------------------------------
+/**
+ * @brief Tabloid, a theme for Dotclear 2
+ *
+ * @package Dotclear
+ * @subpackage Theme
+ *
+ * @author Azork (http://xtradotfreedotfr.free.fr/blog/), Pierre Van Glabeke
+ *
+ * @copyright GPL-2.0 https://www.gnu.org/licenses/gpl-2.0.html
+ */
 
 if (!defined('DC_CONTEXT_ADMIN')) { return; }
 

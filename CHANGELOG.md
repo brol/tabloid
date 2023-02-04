@@ -1,12 +1,16 @@
-v2.1 - 26-12-2022 - Pierre Van Glabeke
-* modifs html
+TODO :
+* bug avec le code ajax pour le moteur de recherche (cf noviny)
+* bug billet inexistant -> warning
+
+v2.1-dev - 04/02/2023 - Pierre Van Glabeke
+* modifs html et css
 * dc2.24 requis
 
-v2.0 - 30-10-2017 - Pierre Van Glabeke
+v2.0 - 30/10/2017 - Pierre Van Glabeke
 * modifs localiastion
 * modifs html
 
-v1.9 - 24-10-2017 - Pierre Van Glabeke
+v1.9 - 24/10/2017 - Pierre Van Glabeke
 * html5
 * modifs css
 * ajout configurateur pour choix menu (menu catégories 1er niveau / simpleMenu / aucun menu)
