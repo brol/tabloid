@@ -13,7 +13,7 @@
     </div>
   </div>
   <h1><a href="{{tpl:BlogURL}}">{{tpl:BlogName encode_html="1"}}</a></h1>
-  <small id="description">{{tpl:BlogDescription encode_html="1"}}</small>
+  <div id="description">{{tpl:BlogDescription}}</div>
 
   <form method="get" action="{{tpl:BlogURL}}" id="topsearch">
     <input type="text" value="{{tpl:lang Search}}..." name="q" id="query" maxlength="255" size="10"

@@ -18,7 +18,7 @@ $this->registerModule(
     'Azork, Pierre Van Glabeke',
     '2.1-dev',
     [
-        'requires' => [['core', '2.24']],
+        'requires' => [['core', '2.26']],
         'type'     => 'theme',
         'tplset'   => 'mustek',
     ]

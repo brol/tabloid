@@ -1,10 +1,10 @@
 TODO :
-* bug avec le code ajax pour le moteur de recherche (cf noviny)
+* bug avec le code ajax pour le moteur de recherche (cf noviny2)
 * bug billet inexistant -> warning
 
-v2.1-dev - 04/02/2023 - Pierre Van Glabeke
+v2.1-dev - 10/03/2023 - Pierre Van Glabeke
 * modifs html et css
-* dc2.24 requis
+* dc2.26 requis
 
 v2.0 - 30/10/2017 - Pierre Van Glabeke
 * modifs localiastion
